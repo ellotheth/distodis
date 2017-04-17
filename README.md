@@ -3,10 +3,12 @@
 Send [Discourse](https://discourse.org) posts to a
 [Discord](https://discordapp.com/) channel.
 
+![sample](https://i.imgur.com/xWiCVfK.png)
+
 ### Requirements
 
 - PHP 5.5+
-- Your own server
+- Your own web server
 
 ### Install
 
