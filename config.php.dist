@@ -1,0 +1,19 @@
+<?php
+
+// secret word/phrase/key shared between this webhook and your discourse
+// server. if requests from discourse aren't signed with this key, they'll be
+// rejected.
+define('SECRET', '');
+
+// discourse homepage: https://discourse.yoursite.com
+define('TARGET', '');
+
+// discourse API key
+define('API_KEY', '');
+
+// discourse API user. if your key is good for 'All users', this can be any
+// user. i use 'system'.
+define('API_USER', '');
+
+// discord webhook uri: https://discordapp.com/api/webhooks/<id>/<token>
+define('HOOK', '');
