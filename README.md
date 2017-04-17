@@ -3,6 +3,12 @@
 Send [Discourse](https://discourse.org) posts to a
 [Discord](https://discordapp.com/) channel.
 
+- Posts show up in pretty embedded fields that include the author, a link, and the first 80 characters of the post
+- Private messages and system messages are ignored
+- Discourse gets meaningful HTTP status codes in response to events
+- The hook lives in `/docroot`, so you don't have to sully your web root with `git` files
+- Change one line of code to add more hooks
+
 ![sample](https://i.imgur.com/xWiCVfK.png)
 
 ### Requirements
@@ -30,7 +36,7 @@ documentation first.
 1. Copy `docroot/index.php.dist` to `docroot/index.php`.
 1. Point your Discourse webhook at `docroot/index.php`.
 
-#### Multiple Discourse forums or Discord channels
+#### Multiple hooks
 
 1. Copy `config.php.dist` to as many config files as you want hooks. The
    filename doesn't matter (I like `config.<hook identifier>.php`).
