@@ -4,6 +4,9 @@ define('HEADER_SIG', 'HTTP_X_DISCOURSE_EVENT_SIGNATURE');
 define('HEADER_EVENT', 'HTTP_X_DISCOURSE_EVENT');
 define('HEADER_EVENT_TYPE', 'HTTP_X_DISCOURSE_EVENT_TYPE');
 
+// https://github.com/discourse/discourse/blob/tests-passed/app/models/post.rb#L92-L97
+define('POST_TYPE_REGULAR', 1);
+
 // exit because $why with http status $status
 function bork($status, $why) {
     echo htmlentities($why);
@@ -59,6 +62,10 @@ function summarize($content) {
 function transform($post) {
     if ($post['username'] === 'system') {
         bork(200, 'i ignore the system user');
+    }
+
+    if ($post['post_type'] !== POST_TYPE_REGULAR) {
+        bork(200, 'i only do posts with content');
     }
 
     $topic = get_topic($post['topic_id']);
